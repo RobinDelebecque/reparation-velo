@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Robin Delebecque Bike Repair</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .about-hero {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .about-content {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-section {
+            margin-bottom: 4rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .about-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .about-card i {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 10px;
+            margin: 2rem auto;
+            display: block;
+        }
+
+        .testimonials {
+            background: var(--light-bg);
+            padding: 4rem 5%;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-card .quote {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-card .author {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.jpg" alt="RD Bikes Logo">
+                <span>RD Bikes</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+                <li><a href="about.html" class="active" data-i18n="nav.about">About</a></li>
+                <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+            <div class="language-selector-container">
+                <select id="language-selector">
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="es">Español</option>
+                    <option value="ca">Català</option>
+                </select>
+            </div>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-hero">
+            <h1 data-i18n="about.title">About Us</h1>
+            <p data-i18n="about.subtitle">Professional bike repair services in Barcelona</p>
+        </section>
+
+        <div class="about-content">
+            <section class="about-section">
+                <h2 data-i18n="about.story.title">Our Story</h2>
+                <p data-i18n="about.story.content">Founded by Robin Delebecque, RD Bikes has been serving the Barcelona cycling community with professional repair services and exceptional customer care. With years of experience in bicycle mechanics and a passion for cycling, we ensure that every bike that comes through our workshop receives the highest quality service.</p>
+                <img src="images/workshop.jpg" alt="Our Workshop" class="about-image">
+            </section>
+
+            <section class="about-section">
+                <h2 data-i18n="about.whyChoose.title">Why Choose Us</h2>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <i class="fas fa-certificate"></i>
+                        <h3 data-i18n="about.whyChoose.expertise.title">Certified Expertise</h3>
+                        <p data-i18n="about.whyChoose.expertise.content">Our team consists of certified bike mechanics with years of experience in handling all types of bicycles.</p>
+                    </div>
+                    <div class="about-card">
+                        <i class="fas fa-heart"></i>
+                        <h3 data-i18n="about.whyChoose.passion.title">Passion for Cycling</h3>
+                        <p data-i18n="about.whyChoose.passion.content">We're not just mechanics - we're cycling enthusiasts who understand the importance of a well-maintained bike.</p>
+                    </div>
+                    <div class="about-card">
+                        <i class="fas fa-users"></i>
+                        <h3 data-i18n="about.whyChoose.customer.title">Customer Focus</h3>
+                        <p data-i18n="about.whyChoose.customer.content">We prioritize customer satisfaction and ensure transparent communication throughout the repair process.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="testimonials">
+                <h2 data-i18n="about.testimonials.title">What Our Customers Say</h2>
+                <div class="about-grid">
+                    <div class="testimonial-card">
+                        <p class="quote" data-i18n="about.testimonials.1.quote">"Robin did an amazing job fixing my mountain bike. The service was quick and professional. Highly recommended!"</p>
+                        <p class="author" data-i18n="about.testimonials.1.author">- Maria G.</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="quote" data-i18n="about.testimonials.2.quote">"Best bike repair service in Barcelona! Fair prices and excellent work quality."</p>
+                        <p class="author" data-i18n="about.testimonials.2.author">- John D.</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="quote" data-i18n="about.testimonials.3.quote">"Very knowledgeable and helpful. My bike runs better than ever after the service."</p>
+                        <p class="author" data-i18n="about.testimonials.3.author">- Carlos R.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 data-i18n="footer.contact">Contact</h3>
+                <p>Email: contact@rdbikes.com</p>
+                <p>Phone: +34 XXX XXX XXX</p>
+                <p>Barcelona, Spain</p>
+            </div>
+            <div class="footer-section">
+                <h3 data-i18n="footer.hours">Hours</h3>
+                <p data-i18n="contact.info.hours.weekdays">Monday - Friday: 9:00 - 18:00</p>
+                <p data-i18n="contact.info.hours.saturday">Saturday: 10:00 - 15:00</p>
+                <p data-i18n="contact.info.hours.sunday">Sunday: Closed</p>
+            </div>
+            <div class="footer-section">
+                <h3 data-i18n="footer.followUs">Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 RD Bikes. <span data-i18n="footer.rights">All rights reserved</span>.</p>
+        </div>
+    </footer>
+
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

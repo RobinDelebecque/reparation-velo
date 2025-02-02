@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Robin Delebecque Bike Repair</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .contact-container {
+            padding: 4rem 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-info {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .contact-info h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info .info-item {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info i {
+            color: var(--primary-color);
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        #map {
+            height: 300px;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.jpg" alt="RD Bikes Logo">
+                <span>RD Bikes</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+                <li><a href="about.html" data-i18n="nav.about">About</a></li>
+                <li><a href="contact.html" class="active" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+            <div class="language-selector-container">
+                <select id="language-selector">
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="es">Español</option>
+                    <option value="ca">Català</option>
+                </select>
+            </div>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-container">
+            <div class="contact-info">
+                <h2 data-i18n="contact.title">Get in Touch</h2>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p data-i18n="contact.info.address">Barcelona, Spain</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <p data-i18n="contact.info.phone">+34 XXX XXX XXX</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p data-i18n="contact.info.email">contact@rdbikes.com</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <p data-i18n="contact.info.hours.weekdays">Monday - Friday: 9:00 - 18:00</p>
+                        <p data-i18n="contact.info.hours.saturday">Saturday: 10:00 - 15:00</p>
+                        <p data-i18n="contact.info.hours.sunday">Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2 data-i18n="contact.title">Send us a Message</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name" data-i18n="contact.form.name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-i18n="contact.form.email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" data-i18n="contact.form.phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="service" data-i18n="contact.form.service">Service Required</label>
+                        <select id="service" name="service" required>
+                            <option value="" data-i18n="contact.form.serviceOptions.select">Select a service</option>
+                            <option value="basic-tune-up" data-i18n="contact.form.serviceOptions.basic">Basic Tune-Up</option>
+                            <option value="full-service" data-i18n="contact.form.serviceOptions.full">Full Service</option>
+                            <option value="repair" data-i18n="contact.form.serviceOptions.repair">Repair</option>
+                            <option value="other" data-i18n="contact.form.serviceOptions.other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-i18n="contact.form.message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="file" data-i18n="contact.form.file">Upload Photos</label>
+                        <input type="file" id="file" name="file" accept="image/*" multiple>
+                        <small data-i18n="contact.form.fileHelp">You can upload photos of your bike to help us better understand the issue</small>
+                    </div>
+                    <button type="submit" class="submit-btn" data-i18n="contact.form.submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <div id="map">
+            <!-- Add a map here using Google Maps or OpenStreetMap -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 data-i18n="footer.contact">Contact</h3>
+                <p>Email: contact@rdbikes.com</p>
+                <p>Phone: +34 XXX XXX XXX</p>
+                <p>Barcelona, Spain</p>
+            </div>
+            <div class="footer-section">
+                <h3 data-i18n="footer.hours">Hours</h3>
+                <p data-i18n="contact.info.hours.weekdays">Monday - Friday: 9:00 - 18:00</p>
+                <p data-i18n="contact.info.hours.saturday">Saturday: 10:00 - 15:00</p>
+                <p data-i18n="contact.info.hours.sunday">Sunday: Closed</p>
+            </div>
+            <div class="footer-section">
+                <h3 data-i18n="footer.followUs">Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 RD Bikes. <span data-i18n="footer.rights">All rights reserved</span>.</p>
+        </div>
+    </footer>
+
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
